@@ -52,6 +52,8 @@ export default function Component1() {
                         <td>Name</td>
                         <td>Symbol</td>
                         <td>Market Cap</td>
+                        <td>High 24h</td>
+                        <td>Low 24h</td>
                         <td>Price</td>
                         <td>Available Supply</td>
                         <td>Volume(24hrs)</td>
@@ -74,6 +76,8 @@ export default function Component1() {
                                     </td>
                                     <td className="symbol">{val.symbol.toUpperCase()}</td>
                                     <td>{currency === "usd" ? "$" : "€"}{val.market_cap.toLocaleString()}</td>
+                                    <td>{currency === "usd" ? "$" : "€"}{val.high_24h.toFixed(2)}</td>
+                                    <td>{currency === "usd" ? "$" : "€"}{val.low_24h.toFixed(2)}</td>
                                     <td>{currency === "usd" ? "$" : "€"}{val.current_price.toFixed(2)}</td>
                                     <td>{val.total_supply ? val.total_supply.toLocaleString() : 'N/A'}</td>
                                     <td>{currency === "usd" ? "$" : "€"}{val.total_volume.toLocaleString()}</td>

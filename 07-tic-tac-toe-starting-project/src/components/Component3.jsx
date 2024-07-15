@@ -55,16 +55,20 @@ export default function Component3(){
     return (
       <div className="user-list">
         <h2>All Users</h2>
-        <button onClick={handleDeleteAllUsers}>Delete All Users</button>
-        <ul>
+        
+        <ul >
           {users.map(user => (
-            <li key={user.id}>
+            <li key={user.id} id="userlis">
+              <p>ID: {user.id}</p>
               <p>Name: {user.name}</p>
               <p>Username: {user.username}</p>
               <p>Email: {user.email}</p>
-              <button onClick={() => handleDeleteUser(user.id)}>Delete</button>
+              <div className='delbtnera'>
+              <button onClick={() => handleDeleteUser(user.id)} id="delbtn">Delete</button>
+              </div>
             </li>
           ))}
+          <button onClick={handleDeleteAllUsers} id="delallusers">Delete All Users</button>
         </ul>
       </div>
     );
